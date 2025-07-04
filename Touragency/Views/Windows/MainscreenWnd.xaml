@@ -1,0 +1,52 @@
+﻿<Window x:Class="Touragency.Views.Windows.MainscreenWnd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Touragency.Views.Windows"
+        mc:Ignorable="d"
+        Title="Путешествуй по России" Height="455" Width="875" MinHeight="300" MinWidth="800"
+        WindowState="Maximized"
+        Icon="/Resources/Icons/логотип.png"
+        Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
+        <Style TargetType="TabItem">
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="#445c93">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="75"/>
+            </Grid.ColumnDefinitions>
+            <Image HorizontalAlignment="Left" Margin="2" Source="/Resources/Icons/логотип.png"></Image>
+            <TextBlock Grid.Column="1" Text="Путешествуй по России" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" FontWeight="Bold" Foreground="White"></TextBlock>
+            <TextBlock x:Name="greetingTbx" Grid.Column="2" Text="Здравствуйте, " FontSize="30" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Center" Foreground="White"></TextBlock>
+            <Button Grid.Column="3" HorizontalAlignment="Right" Margin="10 10 10 10" Width="55" Cursor="Hand" Content="🔚" FontSize="36" ToolTip="Нажмите, чтобы выйти из системы" Click="ChangeAccountBtn_Click"  Background="#00DDDDDD" BorderBrush="#00707070" Foreground="White"></Button>
+        </Grid>
+
+        <Grid Grid.Row="2" Background="#445c93"></Grid>
+        <TabControl Grid.Row="1" Name="tabPages">
+            <TabItem Header="Туры" Name="tourPageTbi">
+                <Frame Name="ToursViewFrame" NavigationUIVisibility="Hidden"></Frame>
+            </TabItem>
+            <TabItem Header="Отели" Name="hotelPageTbi">
+                <Frame Name="HotelsViewFrame" NavigationUIVisibility="Hidden"></Frame>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

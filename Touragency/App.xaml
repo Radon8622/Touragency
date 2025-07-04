@@ -1,0 +1,9 @@
+﻿<Application x:Class="Touragency.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Touragency"
+             StartupUri="Views/Windows/AuthorizationWnd.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
